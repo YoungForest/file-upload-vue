@@ -3,23 +3,23 @@
     <div class="container">
       <!--UPLOAD-->
       <form enctype="multipart/form-data" novalidate v-if="isInitial || isSaving">
-        <h1>Upload images</h1>
+        <h1>上传视频</h1>
         <div class="dropbox">
           <input type="file" multiple :name="uploadFieldName" :disabled="isSaving" @change="filesChange($event.target.name, $event.target.files); fileCount = $event.target.files.length"
             accept="image/*" class="input-file">
             <p v-if="isInitial">
-              Drag your file(s) here to begin<br> or click to browse
+              拖拽你的视频文件到这里<br> 或 点击此处浏览选择文件
             </p>
             <p v-if="isSaving">
-              Uploading {{ fileCount }} files...
+              正在上传 {{ fileCount }} 个文件...
             </p>
         </div>
       </form>
       <!--SUCCESS-->
       <div v-if="isSuccess">
-        <h2>Uploaded {{ uploadedFiles.length }} file(s) successfully.</h2>
+        <h2>上传 {{ uploadedFiles.length }} 文件成功.</h2>
         <p>
-          <a href="javascript:void(0)" @click="reset()">Upload again</a>
+          <a href="javascript:void(0)" @click="reset()">点击再次上传</a>
         </p>
         <ul class="list-unstyled">
           <li v-for="item in uploadedFiles">
@@ -29,7 +29,7 @@
       </div>
       <!--FAILED-->
       <div v-if="isFailed">
-        <h2>Uploaded failed.</h2>
+        <h2>上传失败.</h2>
         <p>
           <a href="javascript:void(0)" @click="reset()">Try again</a>
         </p>
