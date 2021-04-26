@@ -6,7 +6,7 @@
         <h1>上传视频</h1>
         <div class="dropbox">
           <input type="file" multiple :name="uploadFieldName" :disabled="isSaving" @change="filesChange($event.target.name, $event.target.files); fileCount = $event.target.files.length"
-            accept="image/*" class="input-file">
+            accept="video/*" class="input-file">
             <p v-if="isInitial">
               拖拽你的视频文件到这里<br> 或 点击此处浏览选择文件
             </p>
